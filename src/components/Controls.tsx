@@ -44,14 +44,20 @@ const Controls: React.FC<ControlsProps> = ({
 
       {IsPlaying ? (
         <BsPauseCircleFill
-          onClick={handlePlayPause}
+          onClick={()=> {
+            handlePlayPause()
+            setIsPlaying(false);
+          }}
           size={30}
           className="cursor-pointer"
           title="Pause"
         />
       ) : (
         <BsPlayCircleFill
-          onClick={handlePlayPause}
+          onClick={()=>{
+            handlePlayPause()
+            setIsPlaying(true);
+          }}
           size={30}
           className="cursor-pointer"
           title="Play"
